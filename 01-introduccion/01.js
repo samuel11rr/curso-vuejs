@@ -9,6 +9,16 @@ const app = new Vue({
             { nombre: 'Manzana', cantidad: 10 }, 
             { nombre: 'Pera', cantidad: 0 }, 
             { nombre: 'Platano', cantidad: 11 }, 
-        ]
+        ],
+        nuevaFruta: ''
+    },
+    methods: {
+        // agregarFruta: function(){}
+        agregarFruta(){
+            this.frutas.push({
+                nombre: this.nuevaFruta,
+                cantidad: 0
+            })
+        },
     }
 })
