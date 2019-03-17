@@ -1,0 +1,37 @@
+<!-- CRUD CON VUE: https://www.youtube.com/watch?v=jfEEQVdbl54&list=PLPl81lqbj-4J-gfAERGDCdOQtVgRhSvIT&index=6 -->
+
+<!-- SIGUIENTE: https://www.youtube.com/watch?v=eB5xcO8y9RU&list=PLPl81lqbj-4J-gfAERGDCdOQtVgRhSvIT&index=7 -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clases con Vue.js</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div id="app" class="container mt-5">
+        <div :class="['p-3', 'text-white', fondo]">
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi officia dolor dolorem molestias error quia quas commodi sed, corrupti vero accusamus tenetur! Assumenda fugiat qui provident tenetur omnis minus ipsum.
+            </p>
+        </div>
+
+        <input type="text" class="form-control my-3" v-model="fondo">
+
+        <div class="text-white p-3" :class="{'bg-info' : color, 'bg-success' : !color}">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et veritatis impedit, praesentium ullam consectetur recusandae, error, eius repudiandae voluptate cumque quas quibusdam debitis tenetur illum eum omnis quod dignissimos labore.</p>
+        </div>
+
+        <button class="btn btn-primary" @click="color = !color">Cambiar</button>
+
+    </div>
+
+    <!-- scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="02.js"></script>
+  </body>
+</html>
