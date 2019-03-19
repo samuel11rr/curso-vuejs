@@ -1,3 +1,10 @@
+/******
+ * Para sumar desde el hijo emitimos un envento personalizado
+ * el cual va a ser leido por el padre
+ * en este caso el evento es 'sumaHijo'
+ * ******/
+
+
 Vue.component('padre', {
     template: //html
         `
@@ -8,14 +15,21 @@ Vue.component('padre', {
 
             {{nombrePadre}}
 
-            <hijo :numero="numeroPadre" @nombreHijo="nombrePadre = $event"></hijo>
+            <hijo   :numero="numeroPadre" 
+                    @nombreHijo="nombrePadre = $event" 
+                    v-on:sumaHijo="numeroPadre++">
+            </hijo>
         </div>
         `,
 
         data(){
             return {
                 numeroPadre: 0,
-                nombrePadre: ''
+                nombrePadre: '',
             }
+        },
+
+        updated(){
+            console.log('Padre updated');
         }
 })
