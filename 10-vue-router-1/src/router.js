@@ -13,6 +13,10 @@ export default new Router({
       component: () => import(/* webpackChunkName: "home" */ './views/Home.vue')
     },
     {
+      path: '*',
+      redirect:{ name: 'home'}
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
@@ -26,7 +30,7 @@ export default new Router({
       component: () => import(/* webpackChunkName: "services" */ './views/Services.vue')
     },
     {
-      path: '/fotos/:id',
+      path: '/fotos/:id?',
       name: 'fotos',
       component: () => import(/* webpackChunkName: "fotos" */ './views/Fotos.vue')
     },
